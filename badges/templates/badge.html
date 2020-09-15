@@ -1,33 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Badges</title>
-</head>
-<body>
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    <ul>
-        {% for message in messages %}
-        <li>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-    {% endwith %}
-    <h1>Your PyCon India 2020 Badge</h1>
-    <!-- Show the action buttons only if the badge is for currently logged in user -->
-    {% if session.get("uuid", None) == attendee.uuid %}
-    <a href="{{ url_for('edit_badge', id=attendee.id) }}">Edit</a>
-    <a href="{{ url_for('download_badge', id=attendee.id) }}">Download</a>
-    <a href="{{ url_for('logout') }}">Logout</a>
-    <a href="">Tweet</a>
-    {% endif %}
-    <p><img src="{{ attendee.avatar_url }}" alt="User avatar"></p>
-    <p>Fullname: {{ attendee.fullname }}</p>
-    <p>Username: {{ attendee.username }}</p>
-    <p>Twitter ID: {{ attendee.twitter_id }}</p>
-    <p>About: {{ attendee.about }}</p>
-    <p>Booking ID: {{ attendee.booking_id }}</p>
-</body>
-</html>
+{% extends '_base.html' %}
+{% block title %}Badge{% endblock %}
+
+{% block content %}
+    <div class="page-wrapper">
+        <div class="page-details">
+            <h1 class="title">Your PyCon India 2020 Badge</h1>
+            <!-- Show the action buttons only if the badge is for currently logged in user -->
+            {% if session.get("uuid", None) == attendee.uuid %}
+            <div class="flex badge-options" style="margin-bottom: 1.75rem;">
+                <a href="{{ url_for('edit_badge', id=attendee.id) }}">Edit</a>
+                <a href="{{ url_for('download_badge', id=attendee.id) }}">Download</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+                <a href="">Tweet</a>
+            </div>
+            {% endif %}
+            <div class="description">
+                <div class="badge">
+                    <div class="badge-content">
+                        <img class="logo" src={{ url_for('static', filename='images/conf-footer-logo.svg') }} />
+                        <p class="date">October 2 - 5</p>
+                        <div class="flex" style="margin-top:1.75rem;">
+                            <div class="image-container">
+                                <img src="{{ attendee.avatar_url }}" alt="User avatar">
+                            </div>
+                            <div class="details-container">
+                                <p class="fullname">{{ attendee.fullname }}</p>
+                                <p>Username: {{ attendee.username }}</p>
+                                <p>Twitter ID: {{ attendee.twitter_id }}</p>
+                            </div>
+                        </div>
+                        <div class="about">
+                            <p class="label">Talk to me About!!</p>
+                            {% if attendee.about %}
+                                <p>{{ attendee.about }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="badge-footer">
+                        <div class="flex">
+                            <span style="background: #F10000; color: #ffffff;">Attendee</span>
+                            <span style="background: #FFC600; color: #F10000;">No {{ attendee.booking_id }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
