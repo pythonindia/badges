@@ -16,6 +16,13 @@
                     {% endfor %}
                 </div>
                 <div class="flex">
+                    {{ form.avatar_url.label }}
+                    {{ form.avatar_url }}<br>
+                    {% for error in form.avatar_url.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div class="flex">
                     {{ form.twitter_id.label }}
                     {{ form.twitter_id }}<br>
                     {% for error in form.twitter_id.errors %}
