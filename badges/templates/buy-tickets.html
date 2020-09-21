@@ -4,7 +4,12 @@
 {% block content %}
 <div class="page-wrapper">
     <div class="page-details">
+        <a href="//in.pycon.org">
+            <img class="logo" src={{ url_for('static', filename='images/conf-footer-logo.svg') }} />
+        </a>
+        <h1 class="title">It looks like you have not yet bought your tickets. </h1>
         <h1 class="title">Please buy your tickets <a href="https://www.townscript.com/e/pycon-india-2020">here</a></h1>
+        <h2>We get the ticket data daily at night. If you have bought tickets in the last 24 hours, please wait until the next day.</h2>
     </div>
 </div>
 {% endblock %}
