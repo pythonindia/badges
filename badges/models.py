@@ -1,5 +1,6 @@
+import re
 from typing import TypeVar, Union
-from uuid import uuid4
+from uuid import uuid4, UUID
 
 from flask_sqlalchemy import SQLAlchemy
 from psycopg2.errors import UniqueViolation
@@ -8,6 +9,9 @@ from sqlalchemy.dialects.postgresql import TEXT, UUID
 from badges import db
 
 Attendee = TypeVar("Attendee")
+
+
+UUID_PATTERN = re.compile(r"^[\da-f]{8}-([\da-f]{4}-){3}[\da-f]{12}$", re.IGNORECASE)
 
 
 class Attendee(db.Model):
@@ -57,6 +61,14 @@ class Attendee(db.Model):
 
         if a:
             return a
+
+        try:
+            UUID(id)
+        except ValueError:
+            return
+
+        if not UUID_PATTERN.match(id):
+            return
 
         # search by uuid id username is not set yet
         return cls.query.filter_by(uuid=id).first()
