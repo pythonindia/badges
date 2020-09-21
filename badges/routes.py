@@ -79,6 +79,7 @@ def edit_badge(id: str):
 
     form = BadgeForm(
         fullname=attendee.fullname,
+        avatar_url=attendee.avatar_url,
         username=attendee.username,
         twitter_id=attendee.twitter_id,
         about=attendee.about,
@@ -86,11 +87,10 @@ def edit_badge(id: str):
 
     if form.validate_on_submit():
         attendee.fullname = form.fullname.data
+        attendee.avatar_url = form.avatar_url.data
         attendee.username = form.username.data
         attendee.twitter_id = form.twitter_id.data
         attendee.about = form.about.data
-
-        # TODO: Also store avatar when support is added to the model and form
 
         attendee.update()
 
