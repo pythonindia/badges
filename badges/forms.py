@@ -1,8 +1,9 @@
 import re
 
 from flask_wtf import FlaskForm
+from wtforms.fields.html5 import URLField
 from wtforms import Field, IntegerField, StringField, SubmitField
-from wtforms.validators import DataRequired, Email, Length, ValidationError
+from wtforms.validators import DataRequired, Email, Length, ValidationError, url
 
 
 class VerifyEmailForm(FlaskForm):
@@ -26,9 +27,8 @@ def username_check(form: FlaskForm, field: Field) -> bool:
 
 
 class BadgeForm(FlaskForm):
-    # TODO: This form should also allow to upload an avatar
-
     fullname = StringField("fullname", validators=[DataRequired()])
+    avatar_url = URLField("avatar_url", validators=[url()])
     twitter_id = StringField("twitter_id")
     username = StringField("username", validators=[username_check])
     about = StringField(
