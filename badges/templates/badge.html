@@ -4,9 +4,9 @@
 {% block content %}
     <div class="page-wrapper">
         <div class="page-details">
-            <h1 class="title">Your PyCon India 2020 Badge</h1>
             <!-- Show the action buttons only if the badge is for currently logged in user -->
             {% if session.get("uuid", None) == attendee.uuid %}
+            <h1 class="title">Your PyCon India 2020 Badge</h1>
             <div class="flex badge-options" style="margin-bottom: 1.75rem;">
                 <a href="{{ url_for('edit_badge', id=attendee.id) }}">Edit</a>
                 <a href="{{ url_for('download_badge', id=attendee.id) }}">Download</a>
@@ -17,7 +17,9 @@
             <div class="description">
                 <div class="badge">
                     <div class="badge-content">
-                        <img class="logo" src={{ url_for('static', filename='images/conf-footer-logo.svg') }} />
+                        <a href="//in.pycon.org">
+                            <img class="logo" src={{ url_for('static', filename='images/conf-footer-logo.svg') }} />
+                        </a>
                         <p class="date">October 2 - 5</p>
                         <div class="flex" style="margin-top:1.75rem;">
                             <div class="image-container">
