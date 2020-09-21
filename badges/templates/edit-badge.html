@@ -10,6 +10,7 @@
                 {{ form.hidden_tag() }}
                 <div class="flex">
                     {{ form.fullname.label }}
+                    {{ form.fullname.description }}
                     {{ form.fullname }}<br>
                     {% for error in form.fullname.errors %}
                     <span style="color: red;">{{ error }}</span>
@@ -17,6 +18,7 @@
                 </div>
                 <div class="flex">
                     {{ form.avatar_url.label }}
+                    {{ form.avatar_url.description }}
                     {{ form.avatar_url }}<br>
                     {% for error in form.avatar_url.errors %}
                     <span style="color: red;">{{ error }}</span>
@@ -24,6 +26,7 @@
                 </div>
                 <div class="flex">
                     {{ form.twitter_id.label }}
+                    {{ form.twitter_id.description }}
                     {{ form.twitter_id }}<br>
                     {% for error in form.twitter_id.errors %}
                     <span style="color: red;">{{ error }}</span>
@@ -31,6 +34,7 @@
                 </div>
                 <div class="flex">
                     {{ form.username.label }}
+                    {{ form.username.description }}
                     {{ form.username }}<br>
                     {% for error in form.username.errors %}
                     <span style="color: red;">{{ error }}</span>
@@ -38,6 +42,7 @@
                 </div>
                 <div class="flex">
                     {{ form.about.label }}
+                    {{ form.about.description }}
                     {{ form.about }}<br>
                     {% for error in form.about.errors %}
                     <span style="color: red;">{{ error }}</span>

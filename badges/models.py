@@ -22,7 +22,11 @@ class Attendee(db.Model):
     booking_id = db.Column(db.Integer, unique=True, index=True, nullable=False)
     email = db.Column(TEXT, index=True, nullable=False)
     fullname = db.Column(TEXT, nullable=False)
-    avatar_url = db.Column(TEXT, nullable=False, default="https://www.gravatar.com/avatar/00000000000000000000000000000000")
+    avatar_url = db.Column(
+        TEXT,
+        nullable=False,
+        default="https://www.gravatar.com/avatar/00000000000000000000000000000000",
+    )
     username = db.Column(TEXT, index=True)
     twitter_id = db.Column(TEXT)
     about = db.Column(TEXT)
