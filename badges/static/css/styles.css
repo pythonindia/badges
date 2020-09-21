@@ -9,7 +9,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  justify-content: space-between; }
+  justify-content: center; }
 
 .flex {
   display: flex;
@@ -22,7 +22,7 @@ body {
     justify-content: flex-start; }
   .flex.justify-between {
     justify-content: space-between; }
-  
+
 
 
 .primary-button {
@@ -74,14 +74,12 @@ body {
 .page-wrapper {
   text-align: center;
   margin: 0 auto;
-  border-bottom: 1px solid rgba(151, 151, 151, 0.2);
+  /* border-bottom: 1px solid rgba(151, 151, 151, 0.2); */
   min-width: 40rem; }
   .page-wrapper .page-details {
     text-align: center;
     margin: 0 auto;
-    max-width: 75%;
-    padding-top: 4.0625rem;
-    padding-bottom: 5.9375rem; }
+    max-width: 75%; }
     .page-wrapper .page-details .title {
       font-weight: bold;
       font-size: 1.875rem;
@@ -120,8 +118,8 @@ form .flex > * {
   border: 3.5px solid #000000;
   box-sizing: border-box;
   border-radius: 48px;
-  width: 480px;
-  height: 686px;
+  width: 512px;
+  /* height: 686px; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
