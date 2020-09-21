@@ -157,6 +157,7 @@ form .flex > * {
   line-height: 1.25;
   color: #F0060B;
   font-weight: bold;
+  word-break: break-all;
 }
 .badge .badge-content .about {
   border: 2px solid #F10000;
