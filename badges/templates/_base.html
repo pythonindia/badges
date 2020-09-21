@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>PyCon India Badges - {% block title %}{% endblock %}</title>
-	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href={{ url_for('static', filename='css/styles.css') }}>
-	<link rel="shortcut icon" type="image/png" href={{ url_for('static', filename='images/favicon.png') }} />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PyCon India Badges - {% block title %}{% endblock %}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href={{ url_for('static', filename='css/styles.css') }}>
+  <link rel="shortcut icon" type="image/png" href={{ url_for('static', filename='images/favicon.png') }} />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
   {% with messages = get_flashed_messages() %}
