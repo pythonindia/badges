@@ -99,6 +99,10 @@ body {
     .page-wrapper .page-details .page-points {
       margin: 0 2rem; }
 
+img.logo {
+  max-width: 300px;
+}
+
 form label{
   text-transform: capitalize;
   text-align: left;
