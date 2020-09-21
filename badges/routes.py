@@ -56,8 +56,7 @@ def logout():
 def view_badge(id: str):
     attendee = Attendee.find_by_id(id=id)
     if not attendee:
-        flash("Attendee is not registered")
-        return redirect("404.html", error=error)
+        return render_template("404.html", message="Attendee is not registered.")
 
     return render_template("badge.html", attendee=attendee)
 
@@ -66,8 +65,7 @@ def view_badge(id: str):
 def edit_badge(id: str):
     attendee = Attendee.find_by_id(id=id)
     if not attendee:
-        flash("Attendee is not registered")
-        return redirect("404.html", error=error)
+        return render_template("404.html", message="Attendee is not registered.")
 
     if "uuid" not in session:
         flash("Please verify your registration first")

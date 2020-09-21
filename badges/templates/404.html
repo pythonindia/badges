@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+{% block title %}Badge{% endblock %}
+
+{% block content %}
+    <div class="page-wrapper">
+        <div class="page-details">
+            <a href="//in.pycon.org">
+                <img class="logo" src={{ url_for('static', filename='images/conf-footer-logo.svg') }} />
+            </a>
+           <h2>Oops! {{ message }}</h2>
+           <h4><a href='{{ url_for("index") }}'>Home</a></h4>
+        </div>
+    </div>
+{% endblock %}
