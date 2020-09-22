@@ -11,44 +11,54 @@
           <div class="description">
             <form action="" method="POST">
                 {{ form.hidden_tag() }}
-                <div class="flex">
-                    {{ form.fullname.label }}
-                    {{ form.fullname.description }}
-                    {{ form.fullname }}<br>
+                <div class="form-field">
+                    <div class="flex">
+                        {{ form.fullname.label }}
+                        {{ form.fullname }}
+                    </div>
+                    <small >{{ form.fullname.description }}</small><br/>
                     {% for error in form.fullname.errors %}
-                    <span style="color: red;">{{ error }}</span>
+                    <span style="color: red; font-size: 1rem;">{{ error }}</span>
                     {% endfor %}
                 </div>
-                <div class="flex">
-                    {{ form.avatar_url.label }}
-                    {{ form.avatar_url.description }}
-                    {{ form.avatar_url }}<br>
+                <div class="form-field">
+                    <div class="flex">
+                        {{ form.avatar_url.label }}
+                        {{ form.avatar_url }}
+                    </div>
+                    <small >{{ form.avatar_url.description }}</small><br/>
                     {% for error in form.avatar_url.errors %}
-                    <span style="color: red;">{{ error }}</span>
+                    <span style="color: red; font-size: 1rem;">{{ error }}</span>
                     {% endfor %}
                 </div>
-                <div class="flex">
-                    {{ form.twitter_id.label }}
-                    {{ form.twitter_id.description }}
-                    {{ form.twitter_id }}<br>
+                <div class="form-field">
+                    <div class="flex">
+                        {{ form.twitter_id.label }}
+                        {{ form.twitter_id }}
+                    </div>
+                    <small >{{ form.twitter_id.description }}</small><br/>
                     {% for error in form.twitter_id.errors %}
-                    <span style="color: red;">{{ error }}</span>
+                    <span style="color: red; font-size: 1rem;">{{ error }}</span>
                     {% endfor %}
                 </div>
-                <div class="flex">
-                    {{ form.username.label }}
-                    {{ form.username.description }}
-                    {{ form.username }}<br>
+                <div class="form-field">
+                    <div class="flex">
+                        {{ form.username.label }}
+                        {{ form.username }}
+                    </div>
+                    <small >{{ form.username.description }}</small><br/>
                     {% for error in form.username.errors %}
-                    <span style="color: red;">{{ error }}</span>
+                    <span style="color: red; font-size: 1rem;">{{ error }}</span>
                     {% endfor %}
                 </div>
-                <div class="flex">
-                    {{ form.about.label }}
-                    {{ form.about.description }}
-                    {{ form.about }}<br>
+                <div class="form-field">
+                    <div class="flex">
+                        {{ form.about.label }}
+                        {{ form.about }}
+                    </div>
+                    <small >{{ form.about.description }}</small><br/>
                     {% for error in form.about.errors %}
-                    <span style="color: red;">{{ error }}</span>
+                    <span style="color: red; font-size: 1rem;">{{ error }}</span>
                     {% endfor %}
                 </div>
                 {{ form.submit(class_='primary-button') }}

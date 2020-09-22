@@ -8,7 +8,7 @@ body {
   font-style: normal;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   justify-content: center; }
 
 .flex {
@@ -113,6 +113,37 @@ form .flex {
 form .flex > * {
   flex: 1;
 }
+form .form-field {
+  text-align: left;
+  margin-bottom: 1.25rem;
+}
+form .form-field .flex {
+  margin-bottom: 0;
+}
+form .form-field small {
+  max-width: 40%;
+  display: inline-block;
+  font-size: 0.85rem;
+  line-height: 1.25;
+}
+
+.flashes {
+  max-width: 20rem;
+  margin-left: auto;
+  position: fixed;
+  right: 0.5rem;
+  top: 0;
+}
+
+.flashes li {
+  list-style: none;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.75rem;
+  background-color: #f5d76b;
+  color: #D90000;
+  font-weight: 600;
+  box-shadow: -1px 1px 9px black;
+}
 
 .badge-options a {
   flex: 1;
@@ -127,6 +158,7 @@ form .flex > * {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 100%;
 }
 .badge .logo {
   max-width: 300px;
@@ -154,6 +186,9 @@ form .flex > * {
 }
 .badge .badge-content .details-container p {
   margin: 0.5rem;
+}
+.badge .badge-content .details-container a {
+  color: #575757;
 }
 .badge .badge-content .details-container .fullname {
   font-size: 3.5rem;
@@ -236,6 +271,10 @@ form .flex > * {
     display: block; }
     .flex.dates {
       display: flex; }
+    
+  .badge-footer .flex {
+    display: flex;
+  }
 
   .header-wrapper .top-area .center-content .center-details {
     top: 85%; }
@@ -272,6 +311,11 @@ form .flex > * {
     padding-left: 0.5rem;
     padding-right: 0.5rem; }
 
+  .page-wrapper {
+    min-width: 0;
+    max-width: 100%;
+  }
+
   .page-wrapper .page-details {
     max-width: 90%; }
 
@@ -300,9 +344,6 @@ form .flex > * {
   .social-media-details div {
     margin-left: 1rem;
     margin-right: 1rem; }
-
-  .logo {
-    margin-top: 10rem; }
 
   .header-wrapper .bottom-area .additional-details-wrapper {
     padding-top: 18rem; } }
