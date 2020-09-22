@@ -275,6 +275,10 @@ form .form-field small {
   .badge-footer .flex {
     display: flex;
   }
+  .badge-content .flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
   .header-wrapper .top-area .center-content .center-details {
     top: 85%; }
@@ -331,8 +335,15 @@ form .form-field small {
     .footer-wrapper .footer-details .social-media-details {
       order: 2; } }
 @media (max-width: 512px) {
+  html {
+    font-size: 12px;
+  }
   .page-wrapper .page-details {
     max-width: 100%; }
+  
+    .badge .badge-content .about {
+      height: 165px;
+    }
 
   .content {
     max-width: 95%; }
