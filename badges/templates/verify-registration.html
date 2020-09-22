@@ -11,18 +11,22 @@
           <div class="description">
             <form action="" method="POST">
                 {{ form.hidden_tag() }}
-                <div class="flex">
-                    {{ form.booking_id.label }}
-                    {{ form.booking_id }}<br>
+                <div class="form-field">
+                    <div class="flex">
+                        {{ form.booking_id.label }}
+                        {{ form.booking_id }}
+                    </div>
                     {% for error in form.booking_id.errors %}
-                    <span style="color: red;">{{ error }}</span>
+                    <span style="color: red; font-size: 1rem;">{{ error }}</span>
                     {% endfor %}
                 </div>
-                <div class="flex">
-                    {{ form.token.label }}
-                    {{ form.token }}<br>
+                <div class="form-field">
+                    <div class="flex">
+                        {{ form.token.label }}
+                        {{ form.token }}
+                    </div>
                     {% for error in form.token.errors %}
-                    <span style="color: red;">{{ error }}</span>
+                    <span style="color: red; font-size: 1rem;">{{ error }}</span>
                     {% endfor %}
                 </div>
                 {{ form.submit(class_='primary-button') }}
