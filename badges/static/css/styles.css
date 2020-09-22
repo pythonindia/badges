@@ -196,7 +196,7 @@ form .form-field small {
   line-height: 1.25;
   color: #F0060B;
   font-weight: bold;
-  word-break: break-all;
+  word-break: break-word;
 }
 .badge .badge-content .about {
   border: 2px solid #F10000;
@@ -339,7 +339,7 @@ form .form-field small {
     font-size: 12px;
   }
   .page-wrapper .page-details {
-    max-width: 100%; }
+    max-width: 95%; }
   
     .badge .badge-content .about {
       height: 165px;
