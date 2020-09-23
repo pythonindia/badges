@@ -27,7 +27,9 @@
                             </div>
                             <div class="details-container">
                                 <p class="fullname">{{ attendee.fullname }}</p>
+                                {% if attendee.twitter_id %}
                                 <p><i class="fa fa-twitter"></i>  <a href="https://twitter.com/{{ attendee.twitter_id }}">@{{ attendee.twitter_id }}</a></p>
+                                {% endif %}
                             </div>
                         </div>
                         <div class="about">
