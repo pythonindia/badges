@@ -29,14 +29,14 @@
                             <div class="details-container">
                                 <p class="fullname">{{ attendee.fullname }}</p>
                                 {% if attendee.twitter_id %}
-                                <p><i class="fa fa-twitter"></i>  <a href="https://twitter.com/{{ attendee.twitter_id }}">@{{ attendee.twitter_id }}</a></p>
+                                <p><img src="{{ url_for('static', filename='images/twitter-round.svg') }}"/> <a href="https://twitter.com/{{ attendee.twitter_id }}">@{{ attendee.twitter_id }}</a></p>
                                 {% endif %}
                             </div>
                         </div>
                         <div class="about">
-                            <p class="label">Talk to me About!!</p>
+                            <p class="label">Talk to me about!!</p>
                             {% if attendee.about %}
-                                <p>{{ attendee.about }}</p>
+                                <p class="content">{{ attendee.about }}</p>
                             {% endif %}
                         </div>
                     </div>

@@ -1,5 +1,6 @@
 html {
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+  background-color: #000000; }
 
 body {
   margin: 0;
@@ -84,10 +85,16 @@ body {
       font-weight: bold;
       font-size: 1.875rem;
       line-height: 2.3125rem;
-      color: #EB090D;
+      color: #FFC600;
       margin-bottom: 2.0625rem; }
-    .page-wrapper .page-details .info {
-      padding-bottom: 2rem; }
+      .page-wrapper .page-details .info {
+        color: #FFFFFF;
+        font-size: 1.25rem;
+          padding-bottom: 2rem; }
+        .page-wrapper .page-details .info a {
+          color: #FFC600;
+          font-size: 1.35rem;
+          padding-bottom: 2rem; }
     .page-wrapper .page-details .description {
       font-weight: 500;
       font-size: 1.25rem;
@@ -109,8 +116,15 @@ form label{
   text-transform: capitalize;
   text-align: left;
 }
+form {
+  border: 5px solid #FFC600;
+  border-radius: 20px;
+  padding: 1rem;
+}
 form .flex {
   margin-bottom: 1.25rem;
+  color: #D90000;
+  font-weight: bold;
 }
 form .flex > * {
   flex: 1;
@@ -127,6 +141,7 @@ form .form-field small {
   display: inline-block;
   font-size: 0.85rem;
   line-height: 1.25;
+  color: #FFFFFF;
 }
 
 .flashes {
@@ -149,10 +164,12 @@ form .form-field small {
 
 .badge-options a {
   flex: 1;
+  color: #FFFFFF;
+  font-weight: bold;
 }
 
 .badge {
-  border: 3.5px solid #000000;
+  border: 3.5px solid #FFC600;
   box-sizing: border-box;
   border-radius: 48px;
   width: 512px;
@@ -184,13 +201,17 @@ form .form-field small {
 }
 .badge .badge-content .details-container {
   flex: 1;
-  margin: 0 1rem;
 }
 .badge .badge-content .details-container p {
   margin: 0.5rem;
 }
+.badge .badge-content .details-container img {
+  height: 1.5rem;
+  margin: 0rem;
+}
 .badge .badge-content .details-container a {
-  color: #575757;
+  color: #e5e5e5;
+  font-weight: bold;
 }
 .badge .badge-content .details-container .fullname {
   font-size: 3.5rem;
@@ -207,6 +228,9 @@ form .form-field small {
   margin-top: 2.5rem;
   height: 200px;
 }
+.badge .badge-content .about .content {
+  color: #FFFFFF;
+}
 .badge .badge-content .about .label {
   background: #F10000;
   color: #FFFFFF;
@@ -219,6 +243,7 @@ form .form-field small {
 .badge .badge-footer span {
   padding: 1.5rem;
   font-weight: bold;
+  font-size: 2rem;
 }
 .badge .badge-footer span:first-of-type {
   border-bottom-left-radius: 43px;
