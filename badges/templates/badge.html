@@ -17,11 +17,8 @@
             {% endif %}
             <div class="description">
                 <div class="badge">
+                    <img class="header" src={{ url_for('static', filename='images/header.png') }} />
                     <div class="badge-content">
-                        <a href="//in.pycon.org">
-                            <img class="logo" src={{ url_for('static', filename='images/conf-logo.svg') }} />
-                        </a>
-                        <p class="date">October 2 - 5</p>
                         <div class="flex" style="margin-top:1.75rem;">
                             <div class="image-container">
                                 <img src="{{ attendee.avatar_url }}" alt="User avatar">
@@ -38,6 +35,12 @@
                             {% if attendee.about %}
                                 <p class="content">{{ attendee.about }}</p>
                             {% endif %}
+                        </div>
+                    </div>
+                    <div class="badge-mandala">
+                        <div class="flex justify-between">
+                            <img style="height: 10%; width: 10%;" src="{{ url_for('static', filename='images/MandalaLHS.png') }}"/>
+                            <img style="height: 10%; width: 10%;" src="{{ url_for('static', filename='images/MandalaRHS.png') }}"/>
                         </div>
                     </div>
                     <div class="badge-footer">

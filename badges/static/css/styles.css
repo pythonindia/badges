@@ -171,7 +171,7 @@ form .form-field small {
 .badge {
   border: 3.5px solid #FFC600;
   box-sizing: border-box;
-  border-radius: 48px;
+  border-radius: 25px;
   width: 512px;
   /* height: 686px; */
   display: flex;
@@ -181,6 +181,12 @@ form .form-field small {
 }
 .badge .logo {
   max-width: 300px;
+}
+.badge .header {
+  margin: 0 auto;
+  width: 95%;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }
 .badge .badge-content {
   padding: 1.5rem;
@@ -240,17 +246,20 @@ form .form-field small {
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
 }
+.badge .badge-content .badge-mandala .flex img {
+  width: 10%;
+}
 .badge .badge-footer span {
   padding: 1.5rem;
   font-weight: bold;
   font-size: 2rem;
 }
 .badge .badge-footer span:first-of-type {
-  border-bottom-left-radius: 43px;
+  border-bottom-left-radius: 20px;
   width: 50%;
 }
 .badge .badge-footer span:last-of-type {
-  border-bottom-right-radius: 43px;
+  border-bottom-right-radius: 20px;
   flex: 1;
 }
 
@@ -307,6 +316,10 @@ form .form-field small {
     flex-wrap: wrap;
   }
 
+  .badge-mandala .flex {
+    display: flex;
+    justify-content: space-between;
+  }
   .header-wrapper .top-area .center-content .center-details {
     top: 85%; }
 
@@ -338,6 +351,10 @@ form .form-field small {
   .header-wrapper .top-area .center-content .center-details {
     top: 85%; }
 
+  .badge-mandala .flex {
+    display: flex;
+    justify-content: space-between;
+  }
   .menu-wrapper nav a {
     padding-left: 0.5rem;
     padding-right: 0.5rem; }
