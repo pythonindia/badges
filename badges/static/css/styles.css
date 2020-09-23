@@ -86,6 +86,8 @@ body {
       line-height: 2.3125rem;
       color: #EB090D;
       margin-bottom: 2.0625rem; }
+    .page-wrapper .page-details .info {
+      padding-bottom: 2rem; }
     .page-wrapper .page-details .description {
       font-weight: 500;
       font-size: 1.25rem;
@@ -271,7 +273,7 @@ form .form-field small {
     display: block; }
     .flex.dates {
       display: flex; }
-    
+
   .badge-footer .flex {
     display: flex;
   }
@@ -340,7 +342,7 @@ form .form-field small {
   }
   .page-wrapper .page-details {
     max-width: 95%; }
-  
+
     .badge .badge-content .about {
       height: 165px;
     }

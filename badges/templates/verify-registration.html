@@ -8,6 +8,7 @@
               <img class="logo" src={{ url_for('static', filename='images/conf-footer-logo.svg') }} />
           </a>
           <h1 class="title">Enter your booking details</h1>
+          <div class="info">If you don't have a booking ID, please go <a href="https://www.townscript.com/e/pycon-india-2020">here</a> and buy your tickets. If you already have booked your tickets but still don't have booking ID, please contact <a href="mailto:tickets@in.pycon.org">tickets@in.pycon.org</a></div>
           <div class="description">
             <form action="" method="POST">
                 {{ form.hidden_tag() }}

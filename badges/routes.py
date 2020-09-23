@@ -6,32 +6,17 @@ from badges.models import Attendee
 
 
 @app.route("/", methods=["GET", "POST"])
-def index():
-    form = VerifyEmailForm()
-    if form.validate_on_submit():
-        attendee = Attendee.find_by_email(email=form.email.data)
-
-        if not attendee:
-            return redirect(url_for("buy_tickets"))
-
-        return redirect(url_for("verify_registration"))
-
-    return render_template("index.html", form=form)
-
-
-@app.route("/buy-tickets")
-def buy_tickets():
-    # TODO: This can possibly be merged with index
-    # Just a boilerplate for now
-    return render_template("buy-tickets.html")
-
-
-@app.route("/verify-registration", methods=["GET", "POST"])
 def verify_registration():
     form = VerifyRegistrationForm()
     if form.validate_on_submit():
         booking_id = form.booking_id.data
         token = form.token.data
+
+        if not Attendee.find_by_booking_id(booking_id=booking_id):
+            flash(
+                "We don't seem to have your registration data yet or please check the booking ID you have entered. We reconcile the data every night."
+            )
+            return render_template("verify-registration.html", form=form)
 
         if not Attendee.verify(booking_id=booking_id, token=token):
             flash("Invalid booking id or token")
