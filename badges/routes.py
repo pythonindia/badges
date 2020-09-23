@@ -1,3 +1,5 @@
+from urllib.parse import urlencode
+
 from flask import flash, redirect, render_template, request, session
 
 from badges import app
@@ -49,7 +51,14 @@ def view_badge(id: str):
     if not attendee:
         return render_template("404.html", message="Attendee is not registered.")
 
-    return render_template("badge.html", attendee=attendee)
+    tweet_link = "https://twitter.com/intent/tweet?" + urlencode(
+        {
+            "text": f"I am attending PyCon India 2020 on Oct 2-5.\n\nSee my badge here: {request.scheme}://{request.host}{url_for('view_badge', id=id)}.\n\nYou can get yours too at https://in.pycon.org/badges",
+            "hashtags": "PyConIndia2020,python",
+        }
+    )
+
+    return render_template("badge.html", attendee=attendee, tweet_link=tweet_link)
 
 
 @app.route("/<id>/edit", methods=["GET", "POST"])
