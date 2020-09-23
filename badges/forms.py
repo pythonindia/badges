@@ -3,17 +3,28 @@ import re
 from flask_wtf import FlaskForm
 from wtforms.fields.html5 import URLField
 from wtforms import Field, IntegerField, StringField, SubmitField
-from wtforms.validators import DataRequired, Email, Length, ValidationError, url
+from wtforms.validators import DataRequired, Email, NumberRange, Length, ValidationError, url, UUID
 
 
 class VerifyEmailForm(FlaskForm):
     email = StringField("Email Address", validators=[DataRequired(), Email()])
     submit = SubmitField("Verify!")
 
+def booking_id_check(form: FlaskForm, field: Field) -> bool:
+    if not field.data:
+        raise ValidationError("Booking ID cannot be empty.")
+
+    try:
+        int(field.data)
+        if int(field.data) < 1:
+            raise
+    except:
+        raise ValidationError("Booking ID entered is invalid.")
+
 
 class VerifyRegistrationForm(FlaskForm):
-    booking_id = IntegerField("Booking ID", validators=[DataRequired()])
-    token = StringField("Token", validators=[DataRequired()])
+    booking_id = StringField("Booking ID", validators=[booking_id_check])
+    token = StringField("Token", validators=[DataRequired(message="Token cannot be empty."), UUID(message="The token is invalid.")])
     submit = SubmitField("Get my badge!")
 
 
