@@ -3,4 +3,4 @@
 HOST=${HOST:-0.0.0.0}
 PORT=${PORT:-8000}
 
-gunicorn badges.wsgi:app --bind $HOST:$PORT $@
+gunicorn app:app --bind $HOST:$PORT $@
