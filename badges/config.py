@@ -8,3 +8,4 @@ class Config:
     )
     SQLALCHEMY_DATABASE_URI = os.getenv("BADGES_DSN") or "postgres:///badges"
     SQLALCHEMY_TRACK_MODIFICATIONS = True
+    URL_PREFIX = os.getenv("URL_PREFIX") or ""
