@@ -45,8 +45,14 @@
                     </div>
                     <div class="badge-footer">
                         <div class="flex">
+                            {% if attendee.type == "speaker" %}
+                            <span style="background: #F10000; color: #ffffff;">Speaker</span>
+                            {% elif attendee.type == "volunteer" %}
+                            <span style="background: #F10000; color: #ffffff;">Volunteer</span>
+                            {% else %}
                             <span style="background: #F10000; color: #ffffff;">Attendee</span>
-                            <span style="background: #FFC600; color: #F10000;">No {{ attendee.booking_id }}</span>
+                            {% endif %}
+                            <span style="background: #FFC600; color: #F10000;"># {{ attendee.booking_id }}</span>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 import re
 from typing import TypeVar, Union
-from uuid import uuid4, UUID
+from uuid import uuid4
 
 from flask_sqlalchemy import SQLAlchemy
 from psycopg2.errors import UniqueViolation
@@ -12,6 +12,7 @@ Attendee = TypeVar("Attendee")
 
 
 UUID_PATTERN = re.compile(r"^[\da-f]{8}-([\da-f]{4}-){3}[\da-f]{12}$", re.IGNORECASE)
+VALID_ATTENDEE_TYPES = ["attendee", "speaker", "volunteer"]
 
 
 class Attendee(db.Model):
@@ -34,10 +35,22 @@ class Attendee(db.Model):
     username = db.Column(TEXT, index=True)
     twitter_id = db.Column(TEXT)
     about = db.Column(TEXT)
+    type = db.Column(TEXT, default="attendee")
 
     @property
     def id(self) -> str:
         return self.username or self.uuid
+
+    def set_type(self, type: str):
+        if type not in VALID_ATTENDEE_TYPES:
+            raise ValueError(
+                "Attendee type has to be one of {}".format(
+                    ", ".join(VALID_ATTENDEE_TYPES)
+                )
+            )
+
+        self.type = type
+        self.update()
 
     def update(self):
         db.session.add(self)
