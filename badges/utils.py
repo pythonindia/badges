@@ -13,6 +13,25 @@ def get_prefixer(url_prefix):
     return _url_for
 
 
+def bulk_update_speakers(csv_path: str):
+    _404_speakers = []
+    with open(csv_path) as f:
+        rows = csv.DictReader(f, delimiter=",")
+
+        for row in rows:
+            a = Attendee.find_by_booking_id(row["booking_id"])
+            if not a:
+                _404_speakers.append(row)
+                continue
+
+            a.set_type("speaker")
+
+    if _404_speakers:
+        print("The following speakers had no bookings")
+        for s in _404_speakers:
+            print(s)
+
+
 def bulk_insert_attendees(csv_path: str):
     with open(csv_path) as f:
         rows = csv.DictReader(f, delimiter=",")
