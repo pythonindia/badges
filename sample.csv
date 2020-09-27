@@ -1,5 +1,5 @@
-booking_id,email,fullname
-1,foo@bar.com,Foo Bar
-2,john@doe.com,John doe
-3,qux@bar.com,Qux Quux
-4,baz@bar.com,Baz Quux
+booking_id,email,fullname,order_id
+1,foo@bar.com,Foo Bar,11
+2,john@doe.com,John doe,22
+3,qux@bar.com,Qux Quux,33
+4,baz@bar.com,Baz Quux,44
