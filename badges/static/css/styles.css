@@ -227,6 +227,11 @@ form .form-field small {
   font-weight: bold;
   word-break: break-word;
 }
+.badge .badge-content .details-container .twitter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .badge .badge-content .about {
   border: 2px solid #F10000;
   box-sizing: border-box;
@@ -252,7 +257,7 @@ form .form-field small {
 .badge .badge-footer span {
   padding: 1.5rem;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 .badge .badge-footer span:first-of-type {
   border-bottom-left-radius: 20px;
