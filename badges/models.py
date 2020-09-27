@@ -35,7 +35,9 @@ class Attendee(db.Model):
     username = db.Column(TEXT, index=True)
     twitter_id = db.Column(TEXT)
     about = db.Column(TEXT)
+    ticket_type = db.Column(TEXT)
     type = db.Column(TEXT, default="attendee")
+    order_id = db.Column(TEXT, nullable=False)
 
     @property
     def id(self) -> str:
@@ -60,8 +62,16 @@ class Attendee(db.Model):
         return "<Attendee {}>".format(self.uuid)
 
     @classmethod
-    def create(cls, booking_id: int, email: str, fullname: str) -> Attendee:
-        a = Attendee(booking_id=booking_id, email=email, fullname=fullname)
+    def create(
+        cls, booking_id: int, order_id: int, email: str, fullname: str, ticket_type: str
+    ) -> Attendee:
+        a = Attendee(
+            booking_id=booking_id,
+            order_id=order_id,
+            ticket_type=ticket_type,
+            email=email,
+            fullname=fullname,
+        )
         db.session.add(a)
         db.session.commit()
 
@@ -99,9 +109,12 @@ class Attendee(db.Model):
         return cls.query.filter_by(booking_id=booking_id).first()
 
     @classmethod
-    def verify(cls, booking_id: int, token: str) -> bool:
+    def verify(cls, booking_id: int, *, order_id: int = 0, token: str = "") -> bool:
         a = cls.find_by_booking_id(booking_id=booking_id)
-        if a and str(a.token) == token:
+        if a and token and str(a.token) == token:
+            return True
+
+        if a and order_id or a.order_id == order_id:
             return True
 
         return False
