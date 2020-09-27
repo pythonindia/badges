@@ -3,7 +3,7 @@ from urllib.parse import urlencode
 from flask import flash, redirect, render_template, request, session
 
 from badges import app
-from badges.forms import BadgeForm, VerifyEmailForm, VerifyRegistrationForm
+from badges.forms import BadgeForm, VerifyEmailForm, VerifyRegistrationByOrderForm
 from badges.models import Attendee
 from badges.utils import get_prefixer
 
@@ -15,10 +15,10 @@ app.jinja_env.globals.update(url_for=url_for)
 
 @app.route("/", methods=["GET", "POST"])
 def verify_registration():
-    form = VerifyRegistrationForm()
+    form = VerifyRegistrationByOrderForm()
     if form.validate_on_submit():
         booking_id = form.booking_id.data
-        token = form.token.data
+        order_id = form.order_id.data
 
         if not Attendee.find_by_booking_id(booking_id=booking_id):
             flash(
@@ -26,8 +26,8 @@ def verify_registration():
             )
             return render_template("verify-registration.html", form=form)
 
-        if not Attendee.verify(booking_id=booking_id, token=token):
-            flash("Invalid booking id or token")
+        if not Attendee.verify(booking_id=booking_id, order_id=order_id):
+            flash("Invalid booking id or order id")
             return render_template("verify-registration.html", form=form)
 
         attendee = Attendee.find_by_booking_id(booking_id=booking_id)

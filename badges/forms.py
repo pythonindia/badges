@@ -19,20 +19,23 @@ class VerifyEmailForm(FlaskForm):
     submit = SubmitField("Verify!")
 
 
-def booking_id_check(form: FlaskForm, field: Field) -> bool:
-    if not field.data:
-        raise ValidationError("Booking ID cannot be empty.")
+def get_id_checker(field_name: str):
+    def id_checker(form: FlaskForm, field: Field) -> bool:
+        if not field.data:
+            raise ValidationError(f"{field_name} cannot be empty.")
 
-    try:
-        int(field.data)
-        if int(field.data) < 1:
-            raise
-    except:
-        raise ValidationError("Booking ID entered is invalid.")
+        try:
+            int(field.data)
+            if int(field.data) < 1:
+                raise
+        except:
+            raise ValidationError(f"{field_name} entered is invalid.")
+
+    return id_checker
 
 
 class VerifyRegistrationForm(FlaskForm):
-    booking_id = StringField("Booking ID", validators=[booking_id_check])
+    booking_id = StringField("Booking ID", validators=[get_id_checker("Booking ID")])
     token = StringField(
         "Token",
         validators=[
@@ -40,6 +43,12 @@ class VerifyRegistrationForm(FlaskForm):
             UUID(message="The token is invalid."),
         ],
     )
+    submit = SubmitField("Get my badge!")
+
+
+class VerifyRegistrationByOrderForm(FlaskForm):
+    booking_id = StringField("Booking ID", validators=[get_id_checker("Booking ID")])
+    order_id = StringField("Order ID", validators=[get_id_checker("Order ID")],)
     submit = SubmitField("Get my badge!")
 
 
