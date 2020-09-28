@@ -199,6 +199,7 @@ form .form-field small {
 }
 .badge .badge-content .image-container {
   width: 150px;
+  margin: 0 auto;
 }
 .badge .badge-content .image-container img {
   width: 135px;
@@ -220,7 +221,7 @@ form .form-field small {
   font-weight: bold;
 }
 .badge .badge-content .details-container .fullname {
-  font-size: 3.5rem;
+  font-size: 3.0rem;
   margin: 0;
   line-height: 1.25;
   color: #F0060B;
