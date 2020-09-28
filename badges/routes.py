@@ -89,17 +89,17 @@ def edit_badge(id: str):
             form.username.errors.append(
                 "This username already exists. Please choose another one."
             )
+        else:
+            attendee.fullname = form.fullname.data
+            attendee.avatar_url = form.avatar_url.data
+            attendee.username = form.username.data
+            attendee.twitter_id = form.twitter_id.data
+            attendee.about = form.about.data
 
-        attendee.fullname = form.fullname.data
-        attendee.avatar_url = form.avatar_url.data
-        attendee.username = form.username.data
-        attendee.twitter_id = form.twitter_id.data
-        attendee.about = form.about.data
+            attendee.update()
 
-        attendee.update()
-
-        flash("Badge information updated")
-        return redirect(url_for("view_badge", id=attendee.id))
+            flash("Badge information updated")
+            return redirect(url_for("view_badge", id=id))
 
     return render_template("edit-badge.html", form=form)
 
