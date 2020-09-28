@@ -87,6 +87,10 @@ body {
       line-height: 2.3125rem;
       color: #FFC600;
       margin-bottom: 2.0625rem; }
+      .page-wrapper .page-details .error-message {
+        color: #FFFFFF; }
+        .page-wrapper .page-details .error-links {
+          color: #FFFFFF; }
       .page-wrapper .page-details .info {
         color: #FFFFFF;
         font-size: 1.25rem;

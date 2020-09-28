@@ -7,8 +7,8 @@
             <a href="//in.pycon.org">
                 <img class="logo" src={{ url_for('static', filename='images/conf-footer-logo.svg') }} />
             </a>
-           <h2>Oops! {{ message }}</h2>
-           <h4><a href='{{ url_for("verify_registration") }}'>Home</a></h4>
+           <h2 class="error-message">Oops! {{ message }}</h2>
+           <h4 class="error-links"><a href='{{ url_for("verify_registration") }}'>Home</a></h4>
         </div>
     </div>
 {% endblock %}
