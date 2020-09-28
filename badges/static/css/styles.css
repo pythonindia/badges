@@ -189,7 +189,7 @@ form .form-field small {
   border-top-right-radius: 25px;
 }
 .badge .badge-content {
-  padding: 1.5rem;
+  padding: 0 1.5rem;
   flex: 1;
 }
 .badge .badge-content p.date {
@@ -237,7 +237,7 @@ form .form-field small {
   border: 2px solid #F10000;
   box-sizing: border-box;
   border-radius: 20px;
-  margin-top: 2.5rem;
+  margin-top: 0.5rem;
   height: 200px;
 }
 .badge .badge-content .about .content {
