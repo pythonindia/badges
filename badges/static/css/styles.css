@@ -238,23 +238,24 @@ form .form-field small {
   justify-content: center;
 }
 .badge .badge-content .about {
-  border: 2px solid #F10000;
+  border: 2px solid #8921cc;
   box-sizing: border-box;
-  border-radius: 20px;
+  border-radius: 10px;
   margin-top: 0.5rem;
   height: 200px;
+  background: white;
 }
 .badge .badge-content .about .content {
-  color: #FFFFFF;
+  color: #21292e;
 }
 .badge .badge-content .about .label {
-  background: #F10000;
+  background: #8921cc;
   color: #FFFFFF;
   font-weight: bold;
   margin: 0;
   padding: 0.65rem;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 .badge .badge-content .badge-mandala .flex img {
   width: 10%;

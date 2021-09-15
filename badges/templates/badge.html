@@ -39,22 +39,9 @@
                             {% endif %}
                         </div>
                     </div>
-                    <div class="badge-mandala">
-                        <div class="flex justify-between">
-                            <img style="height: 10%; width: 10%;" src="{{ url_for('static', filename='images/MandalaLHS.png') }}"/>
-                            <img style="height: 10%; width: 10%;" src="{{ url_for('static', filename='images/MandalaRHS.png') }}"/>
-                        </div>
-                    </div>
                     <div class="badge-footer">
                         <div class="flex">
-                            {% if attendee.type == "speaker" %}
-                            <span style="background: #F10000; color: #ffffff;">Speaker</span>
-                            {% elif attendee.type == "volunteer" %}
-                            <span style="background: #F10000; color: #ffffff;">Volunteer</span>
-                            {% else %}
-                            <span style="background: #F10000; color: #ffffff;">Attendee</span>
-                            {% endif %}
-                            <span style="background: #FFC600; color: #F10000;"># {{ attendee.booking_id }}</span>
+                            <span style="color: white;">Attendee</span>
                         </div>
                     </div>
                 </div>
