@@ -36,12 +36,17 @@
                             <p class="label">Talk to me about!!</p>
                             {% if attendee.about %}
                                 <p class="content">{{ attendee.about }}</p>
+                            {% else %}
+                                <p class="content">I am attending PyCon India 2021. #PyConIndia2021</p>
                             {% endif %}
                         </div>
                     </div>
                     <div class="badge-footer">
                         <div class="flex">
                             <span style="color: white;">Attendee</span>
+                        </div>
+                        <div class="footer-logo">
+                            <img src="{{ url_for('static', filename='images/transformlogo.png') }}" alt="">
                         </div>
                     </div>
                 </div>
