@@ -6,7 +6,7 @@
         <div class="page-details">
             <!-- Show the action buttons only if the badge is for currently logged in user -->
             {% if session.get("uuid", None) == attendee.uuid %}
-            <h1 class="title">Your PyCon India 2020 Badge</h1>
+            <h1 class="title">Your PyCon India 2021 Badge</h1>
             <div class="flex badge-options" style="margin-bottom: 1.75rem;">
                 <a href="{{ url_for('edit_badge', id=attendee.id) }}">Edit</a>
                 <a href="https://in.pycon.org/2020/assets/PyConIndia2020.ics">Calendar</a>
@@ -17,7 +17,7 @@
             {% endif %}
             <div class="description">
                 <div class="badge">
-                    <img class="header" src={{ url_for('static', filename='images/header.png') }} />
+                    <img class="header" src={{ url_for('static', filename='images/header_date.svg') }} />
                     <div class="badge-content">
                         <div class="flex" style="margin-top: 0.5rem;">
                             <div class="image-container">
