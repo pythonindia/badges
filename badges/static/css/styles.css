@@ -24,6 +24,13 @@ body {
   .flex.justify-between {
     justify-content: space-between; }
 
+.user-avatar {
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  z-index: 1;
+}
+
 
 
 .primary-button {

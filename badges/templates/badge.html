@@ -21,7 +21,8 @@
                     <div class="badge-content">
                         <div class="flex" style="margin-top: 0.5rem;">
                             <div class="image-container">
-                                <img src="{{ attendee.avatar_url }}" alt="User avatar">
+                                <img src="{{ attendee.avatar_url }}" class="user-avatar" alt="User avatar">
+                                <img src="{{ url_for('static', filename='images/defaultdp.png')}}" alt="User avatar">
                             </div>
                         </div>
                         <div class="flex" style="margin-top: 0.5rem;">
