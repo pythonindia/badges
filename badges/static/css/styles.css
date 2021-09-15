@@ -186,16 +186,20 @@ form .form-field small {
   flex-direction: column;
   justify-content: space-between;
   max-width: 100%;
+  border: 1px solid #EBC453;
+  background-image: url(/static/images/background.png);
+  background-size: 100% 100%;
+  border-radius: 10px;
 }
 .badge .logo {
   max-width: 300px;
 }
 .badge .header {
   margin: 0 auto;
-  width: 100%;
+  width: 85%;
 }
 .badge .badge-content {
-  padding: 0 1.5rem;
+  padding: 0 2.5rem;
   flex: 1;
 }
 .badge .badge-content p.date {
