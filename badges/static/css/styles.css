@@ -1,6 +1,6 @@
 html {
   scroll-behavior: smooth;
-  background-color: #000000; }
+  background-color: #21292e; }
 
 body {
   margin: 0;
@@ -33,7 +33,7 @@ body {
   color: #FFFFFF;
   text-decoration: none;
   padding: 0.8125rem 1rem 0.875rem 1rem;
-  background: linear-gradient(180deg, #FF0006 0%, #C7181A 100%);
+  background: linear-gradient(180deg, #6610f2 0%, #C7181A 100%);
   border-radius: 0.3125rem;
   display: inline-block; }
   .primary-button span {
@@ -85,7 +85,7 @@ body {
       font-weight: bold;
       font-size: 1.875rem;
       line-height: 2.3125rem;
-      color: #FFC600;
+      color: #EBC453;
       margin-bottom: 2.0625rem; }
       .page-wrapper .page-details .error-message {
         color: #FFFFFF; }
@@ -96,7 +96,7 @@ body {
         font-size: 1.25rem;
           padding-bottom: 2rem; }
         .page-wrapper .page-details .info a {
-          color: #FFC600;
+          color: #EBC453;
           font-size: 1.35rem;
           padding-bottom: 2rem; }
     .page-wrapper .page-details .description {
@@ -121,13 +121,13 @@ form label{
   text-align: left;
 }
 form {
-  border: 5px solid #FFC600;
+  border: 5px solid #EBC453;
   border-radius: 20px;
   padding: 1rem;
 }
 form .flex {
   margin-bottom: 1.25rem;
-  color: #D90000;
+  color: #EBC453;
   font-weight: bold;
 }
 form .flex > * {
@@ -173,7 +173,7 @@ form .form-field small {
 }
 
 .badge {
-  border: 3.5px solid #FFC600;
+  border: 3.5px solid #EBC453;
   box-sizing: border-box;
   border-radius: 25px;
   width: 512px;
@@ -198,7 +198,7 @@ form .form-field small {
 }
 .badge .badge-content p.date {
   margin-top: 0;
-  color: #FFC600;
+  color: #EBC453;
   line-height: 0;
 }
 .badge .badge-content .image-container {
