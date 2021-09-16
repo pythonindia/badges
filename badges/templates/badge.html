@@ -44,7 +44,7 @@
                     </div>
                     <div class="badge-footer">
                         <div class="flex">
-                            {% attendee.type == "volunteer" %}
+                            {% if attendee.type == "volunteer" %}
                             <span style="color: #EBC453;">Volunteer</span>
                             {% else %}
                             <span style="color: white;">Attendee</span>
