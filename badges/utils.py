@@ -38,6 +38,9 @@ def bulk_insert_attendees(csv_path: str):
         rows = csv.DictReader(f, delimiter=",")
 
         for row in rows:
+            if Attendee.find_by_booking_id(row["booking_id"]):
+                continue
+
             Attendee.create(
                 booking_id=row["booking_id"],
                 order_id=row["order_id"],

@@ -19,14 +19,17 @@ class VerifyEmailForm(FlaskForm):
     submit = SubmitField("Verify!")
 
 
-def get_id_checker(field_name: str):
+def get_id_checker(field_name: str, length: int=None):
     def id_checker(form: FlaskForm, field: Field) -> bool:
         if not field.data:
             raise ValidationError(f"{field_name} cannot be empty.")
 
         try:
+            if length and len(field.data) > length:
+                raise ValidationError(f"{field_name} entered is invalid")
+
             int(field.data)
-            if int(field.data) < 1:
+            if int(field.data) < 0:
                 raise
         except:
             raise ValidationError(f"{field_name} entered is invalid.")
@@ -47,7 +50,7 @@ class VerifyRegistrationForm(FlaskForm):
 
 
 class VerifyRegistrationByOrderForm(FlaskForm):
-    booking_id = StringField("Booking ID", validators=[get_id_checker("Booking ID")])
+    booking_id = StringField("Booking ID", validators=[get_id_checker("Booking ID", 7)])
     order_id = StringField("Order ID", validators=[get_id_checker("Order ID")],)
     submit = SubmitField("Get my badge!")
 
