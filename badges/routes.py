@@ -53,8 +53,8 @@ def view_badge(id: str):
 
     tweet_link = "https://twitter.com/intent/tweet?" + urlencode(
         {
-            "text": f"I am attending PyCon India 2020 on Oct 2-5.\n\nSee my badge here: {request.scheme}://{request.host}{url_for('view_badge', id=id)}.\n\nYou can get yours too at https://in.pycon.org/badges",
-            "hashtags": "PyConIndia2020,python",
+            "text": f"I am attending PyCon India 2021, the premier conference for Python programming language in India on Sept 17-20.\n\nCheck out my virtual badge here: {request.scheme}://{request.host}{url_for('view_badge', id=id)}.\n\n@pyconindia",
+            "hashtags": "PyConIndia2021,python",
         }
     )
 
